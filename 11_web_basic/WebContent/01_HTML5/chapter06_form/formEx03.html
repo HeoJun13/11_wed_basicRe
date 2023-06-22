@@ -35,6 +35,221 @@
 		<p><input type = "submit"></p>
 
 	</form>
+	
+	
+	<br><hr><br>
+	
+	<!--
+	  
+		# password 타입
+	
+		- 패스워드 필드를 정의한다. 
+		- 사용자가 입력한 글자는 보이지 않는다.
+		 
+	-->
+	
+	
+	<h3>password type</h3>
+	<form>
+		<p>패스워드 : <input type="password"></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	
+	
+	<!-- 
+	
+		# radio 타입
+		
+		- 여러 항목 중에서 하나만을 선택할 수 있다.
+	 	- name이 같아야 동일한 그룹으로 취급이 된다.
+	 	- 선택된 라디오 버튼의 value값이 name=value 형태로 전달이 된다.
+	 	
+	 -->
+	 
+	 
+	 <h3>radio type</h3>
+	<form>
+		<p>
+			<input type="radio" name="month" value="1"> 1개월
+			<input type="radio" name="month" value="2"> 2개월
+			<input type="radio" name="month" value="3"> 3개월
+			<input type="radio" name="month" value="4"> 4개월
+			<input type="radio" name="month" value="5"> 5개월
+			<input type="radio" name="month" value="6" checked="checked"> 6개월
+		</p>
+		<p><input type="submit"></p>	
+	</form>
+		
+	<br><hr><br>
+	
+	
+	 <h3>checkbox type</h3>
+	<form>
+		<p>
+			<input type="checkbox" name="month" value="1"> 1개월
+			<input type="checkbox" name="month" value="2" checked="checked"> 2개월
+			<input type="checkbox" name="month" value="3"> 3개월
+			<input type="checkbox" name="month" value="4" checked="checked"> 4개월
+			<input type="checkbox" name="month" value="5"> 5개월
+			<input type="checkbox" name="month" value="6" checked="checked"> 6개월
+		</p>
+		<p><input type="submit"></p>	
+	</form>
+		
+	<br><hr><br>
+	
+	 <h3>select type</h3>
+	<form>
+		<select name ="month">
+			<option value="1">1개월</option>
+			<option value="2">2개월</option>
+			<option value="3">3개월</option>
+			<option value="4">4개월</option>
+			<option value="5">5개월</option>
+			<option value="6" selected="selected">6개월</option>
+		</select>
+		<p><input type ="submit"></p>
+	</form>
+	
+	<br><br>
+	
+	<h3>button type</h3>
+	<form>
+		<p><input type ="button" value="결제하기"></p>
+		<p><button>주문하기</button></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	
+	<!--
+	
+		# textarea 태그
+		 
+		- 여러줄의 텍스트를 입력받을 때 사용하는 태그.
+		- 영역의 크기는 rows와 cols로 설정한다.
+		- 사용자가 초기 공간보다 더 많은 텍스트를 입력하면 자동으로 스크롤바가 생성된다.
+	
+	 -->
+	 
+	 <h3>textarea type</h3>
+	<form>
+		<p><textarea rows="10" cols="50" name="textarea"></textarea></p>
+		<p><textarea rows="20" cols="40" name="textarea2">초깃값은 이곳에 입력합니다.</textarea></p>
+		<p><textarea rows="20" cols="50" name ="textarea3" placeholder="100자 이내로 작성하시요." maxlength="100"></textarea></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	 
+	 
+	<!-- 
+	
+		# file 타입
+		
+		- 사용자가 파일을 선택해서 서버로 업로드해야 하는 경우 사용한다.
+		- 웹 브라우저마다 다르게 구현되고 있다.
+		- form의 메서드 전송방식이 반드시 post이어야 하며  enctype="multipart/form-data" 속성을 반드시 지정해야 한다.
+		   
+	 -->
+	 
+	 <h3>File type</h3>
+	<form method="post" enctype="multipart/form-data">
+		<p><input type ="file" name="f"></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	
+	<!-- 
+		
+		# hidden 타입
+	
+		- 사용자는 볼 수 없고 서버로 데이터를 전송하고 싶을 때 사용 한다.
+		- hidden 요소의 name과 value값이 서버로 전달된다.
+	 
+	 -->
+	 <h3>hidden type</h3>
+	<form>
+		<p>아이디 : <input type ="text" name = ""></p>
+		<input type ="hidden" name="isPC" value="true">
+		<input type ="hidden" name="iTime" value="2023-06-22">
+		<input type ="hidden" name="locationCd" value="100">
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	
+	<!-- 
+		
+		# date 타입
+		
+		- 사용자로 하여금 날짜를 선택하게 한다.
+		- min,max속성을 사용해 특정기간에서만 날짜를 선택하도록 할 수 있다.
+		- 익스플로어 및 특정 브라우저는 아직 지원이 되지 않는다.
+		
+	 -->
+	 <h3>date type</h3>
+	<form>
+		<p>예약일1 : <input type ="date" name="date1" ></p>
+		<p>예약일2 : <input  type ="date" name="date2" value="2023-06-22"></p>
+		<p>예약일3 : <input type ="date" name="date3" min="2023-06-22" max="2023-06-30"></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	 
+	 <!-- 
+	
+		# number 타입
+		
+		- 정수를 입력받을 수 있다. 
+		- 브라우저에 따라서 다르게 표시된다.
+	 	
+	 	- [ 속성 ]
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	value     : 초깃값
+	 	step	  : 증감 숫자
+	 	min , max : 최소값, 최대값
+	 	
+	 -->
+	 
+	 <h3>number type</h3>
+	<form>
+		<p>주문수량 : <input type="number" name="oderQty"></p>
+		<p>사이즈선택 : <input type="number" name="size1" value="250" step="5"></p>
+		<p>사이즈선택 : <input type="number" name="size2" value="230" step="10" min="200" max="300"></p>
+		<p><input type="submit"></p>	
+	</form>
+	
+	<br><hr><br>
+	
+	<!-- 
+	 
+	 	# email 타입
+	 	
+	    - 모습은 text타입과 비슷하지만 이메일에 유효한 주소를 검사한다. 
+	    - 유효값 확인은 submit을 클릭할 경우에 진행된다.
+	 	
+	  -->
+	  <h3>email type</h3>
+	<form>
+		<p>이메일 : <input type ="email" name="email">
+		</p>	
+	</form>
+	
+	<br><hr><br>
+	
+	
+
+
+
 
 
 </body>
