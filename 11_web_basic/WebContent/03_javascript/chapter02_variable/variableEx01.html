@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 변수</title>
+<script>
+		
+//1) String(숫자) : 숫자 > 문자열 형변환 
+var var1 = 10000;
+var strVar1 = var1 + "";
+var strVar2 = Stringa9(vat);
+comsole.log(Var1 , typeof var1)
+comsole.log(strVar1 , typeof strvar1)
+comsole.log(strVar2 , typeof strvar2)
+comsole.log("")
+
+
+
+	/*
+	
+		# 자바스크립트의 변수
+	
+		- 자바스크립트에서의 변수는 데이터의 타입을 따로 명시하지 않고 var , let으로 사용한다.
+		- 자바스크립트에서의 상수는 const를 사용한다.
+		- 변수의 역할, 명명규칙 , 활용등은 다른 언어와 같다.
+		- 자바스크립트의 데이터 타입
+		
+			1) 숫자 (number)
+			2) 문자열 (string)
+			3) 불리언 (boolean)
+			4) undefined
+			5) 객체(object)
+	
+	*/
+	
+	
+	// 변수명 앞에 var(variable), let 키워드를 붙여서 변수를 생성한다.
+	var v1 = 1; 		// 자바스크립트에서는 정수,실수 모두 number 타입니다.
+	var v2 = 1.5;		// 자바스크립트에서는 정수,실수 모두 number 타입니다.
+	var v3 = '@';		// 자바스크립트에서는 '' , "" string 타입니다.
+	var v4 = 'data';	// 자바스크립트에서는 '' , "" string 타입니다.
+	let v5 = true;
+	let v6; // 초기화라지 않은 변수나 존재하지 않는 값의 데이터는 undefined 타입니다.
+	let v7 = {
+			"pdCd" : "0x1234",
+			"pdNm" : "스마트TV",
+			"qte" : 1,
+			"orderer" : "qwer1234"
+			"isMobile" : true
+			};
+	
+	
+	
+	console.log("-- 데이터 출력 ---");
+	console.log("v1 : " , v1);
+	console.log("v2 : " , v2);
+	console.log("v3 : " , v3);
+	console.log("v4 : " , v4);
+	console.log("v5 : " , v5);
+	console.log("v6 : " , v6);
+	console.log("v7 : " , v7);
+	console.log("");
+
+	
+	console.log("-- 데이터 타입 출력 ---");
+	console.log("v1 : " , typeof v1);
+	console.log("v2 : " , typeof v2);
+	console.log("v3 : " , typeof v3);
+	console.log("v4 : " , typeof v4);
+	console.log("v5 : " , typeof v5);
+	console.log("v6 : " , typeof v6);
+	console.log("v7 : " , typeof v7);
+	console.log("");
+
+		const v8 = "데이터"
+		v8 = " 수정된 "
+		
+			// 2) Number(문자열) : 문자열 > 숫자 형변환
+			var var2 = "27000";
+			var nVar2 = Number(var2);
+			
+			console.log(var2 , typeof var2);
+			console.log(nVar2 , typeof nVar2);
+			console.log("");
+			
+			
+			// 3) parseInt(실수) : 실수 > 정수
+			var var3 = 10 / 3; //정수 / 정수 = 실수
+			
+			var nVar3 = parseInt(var3);
+			
+			console.log(var3 , typr var3);
+			console.log(nVar3 , typr var3);
+</script>
+</head>
+<body>
+
+</body>
+</html>
