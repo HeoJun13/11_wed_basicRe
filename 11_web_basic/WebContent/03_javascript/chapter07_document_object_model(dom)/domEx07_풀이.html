@@ -1,15 +1,27 @@
 <!DOCTYPE html>
+<!--0704 15:44 ~ 15:50 . 대문자 소문자 조심-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+    function answer() {
+
+        var grade = document.getElementById("grade").value;
+
+
+        document.getElementById("choiceGradeLabel").innerHTML = "선택된 학년"
+        document.getElementById("choiceGrade").value = grade;
+        document.getElementById("choiceGrade").disabled = true;
+    }
+
+</script>
 </head>
 <body>
 	
 	<!-- 
 		
 		셀렉트 태그에서 학년을 선택하고 버튼을 클릭하면 화면에 
-		
 		1) choiceGradeLabel의 텍스트를 '선택된 학년'으로 변경하고
 		2) choiceGrade의 값을 셀렉트 박스에서 선택한 값이 보이도록 변경하고
 		3) choiceGrade의 값을 수정할 수 없도록 
