@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--16시26분 ~ 40분 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+	function formmateobject() {
+		var writer = document.f.writer;
+			if (writer.value,length<10) {
+				alert("10자 이상 작성하세요.")
+				writer.focus();
+				return false;
+			}
+
+			var name = document.f.name;
+			if (name.value == "") {
+				alert("이름을 작성하세요.")
+				name.focus();
+				return false;
+			}
+			var email13 = document.f.email13;
+			if (email13.value == "") {
+				alert("이메일을 작성하세요.")
+				email13.focus();
+				return false;
+			}
+			var Pw = document.f.Pw;
+			if (Pw.value == "") {
+				alert("비밀번호를 작성하세요.")
+				Pw.focus();
+				return false;
+			}
+			var Ov = document.f.Ov;
+			if (Ov.value.length<30) {
+				alert("30자 이상 작성해주세요.")
+				Ov.focus();
+				return false;
+			}
+			
+			return true;
+	}	
+</script>
+</head>
+<body>
+
+	<!-- 
+	
+		# 입력하지 않은 필드의 값을 검증하여 
+		
+			1) alert으로 안내
+			2) focus로 이동
+			
+			하는 스크립트를 작성해 보시오. 
+		
+	-->
+
+	<form name="f" onsubmit="return formmateobject();" > 
+		<h2>게시글 쓰기</h2>
+		<br>
+		<table style="width: 700;" border="1">
+			<colgroup>
+				<col width="20%">
+				<col width="80%">
+			</colgroup>
+			<tr>
+				<td align="center"><span style="color: red">*</span> 작성자</td>
+				<td><input type="text" name = "writer" size="80"/></td>
+			</tr>
+			<tr >
+				<td align="center"><span style="color: red">*</span> 제목</td>
+				<td><input type="text" name = "name" size="80"/></td>
+			</tr>
+			<tr>
+				<td align="center"><span style="color: red">*</span> 이메일</td>
+				<td><input type="email" name = "email13" size="80"/></td>
+			</tr>
+			<tr>
+				<td align="center"><span style="color: red">*</span> 비밀번호</td>
+				<td><input type="password" name = "Pw" size="80"/></td>
+			</tr>
+			<tr>
+				<td align="center"><span style="color: red">*</span> 글내용</td>
+				<td><textarea  rows="10" name = "Ov" cols="50" ></textarea></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2">
+					<input type="submit"  value="확인"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
