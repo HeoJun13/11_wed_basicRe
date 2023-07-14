@@ -54,9 +54,13 @@ WHERE
 
 			
 # 상품등록 날짜가 2021년 이후부터의 상품의 전체 컬럼 조회		
+SELECT 
+		*
+FROM	
+		PRODUCT
+WHERE
+		REG_DT >= '2021-01-01';
 
-		
-		
 /*
 
 	# DISTINCT 
@@ -65,8 +69,18 @@ WHERE
 		
 
 */
+SELECT
+		REG_DT
+FROM
+		PRODUCT;
+
+SELECT DISTINCT
+		REG_DT
+FROM
+		PRODUCT;	
+	
 		
-		
+        
 		
 /*
 
@@ -78,19 +92,56 @@ WHERE
 */
 
 # 상품코드가 'P10001' , 'P10003' , 'P10005'인 상품의 전체컬럼 조회
-	
-		
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_CD = 'P10001' 
+OR
+		PRODUCT_CD = 'P10003'
+OR
+		PRODUCT_CD = 'P10005';
+    
+    
 # 상품가격이 20000 ~ 50000인 상품의 전체컬럼 조회
-
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRICE >= 20000 AND PRICE <= 50000;
 		
+        
 # 상품가격이 20000 ~ 50000이 아닌 상품의 전체컬럼 조회
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		NOT (PRICE >= 20000 AND PRICE <= 50000);
 
-		
-# 상품가격이 20000 ~ 50000이면서 2021년도 등록상품의 전체컬럼 조회		
 
-		
+# 상품가격이 20000 ~ 50000이면서 2020년도 등록상품의 전체컬럼 조회		
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		(PRICE >= 20000 AND PRICE <= 50000)
+AND
+		(REG_DT >= '2020-01-01' AND REG_DT <= '2020-12-31');
+
+
 # 상품 등록날짜가 2020년도 1~3월 , 2021년도 1~3월 등록상품의 전체컬럼 조회
-
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		(REG_DT >= '2020-01-01' AND REG_DT <= '2020-03-31')
+OR
+		(REG_DT >= '2021-01-01' AND REG_DT <= '2021-03-31');
 
 
 
@@ -116,22 +167,57 @@ WHERE
 */
 		
 # 상품가격이 20000 ~ 50000인 상품의 전체컬럼 조회
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRICE BETWEEN 20000 AND 50000;
 
 		
 # 상품가격이 20000 ~ 50000이 아닌 상품의 전체컬럼 조회
-
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		NOT PRICE BETWEEN 20000 AND 50000;
 		
+        
 # 2021년에 등록된 상품의 전체컬럼 조회		
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		REG_DT BETWEEN '2021-01-01' AND '2021-12-31';
 
 		
 # 2021년에 등록되지 않은 상품의 전체컬럼 조회		
-
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		NOT REG_DT BETWEEN '2021-01-01' AND '2021-12-31';
 		
+        
 # 상품코드가 'P10001' , 'P10003' , 'P10005'인 상품의 전체컬럼 조회
-
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_CD IN ('P10001' , 'P10003' , 'P10005');
 		
+        
 # 상품코드가 'P10001' , 'P10003' , 'P10005'이 아닌 상품의 전체컬럼 조회
-				
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_CD NOT IN ('P10001' , 'P10003' , 'P10005');				
 		
 /*
 
@@ -145,13 +231,31 @@ WHERE
 */
 				
 # 상품명에 'USB'단어가 들어있는 상품의 전체 컬럼 검색
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_NM LIKE '%USB%';
 
 		
 # 상품명이 'USB'로 시작하는 상품의 전체 컬럼 검색
-
-		
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_NM LIKE 'USB%';
+	
+	
 # 상품명이 'GB'로 끝나는 상품의 전체 컬럼 검색
- 
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		PRODUCT_NM LIKE '%GB'; 
+
 
 /*
 
@@ -167,19 +271,52 @@ WHERE
 
 		
 # 상품의 전체 컬럼 검색 (가격이 낮은 순서대로 정렬)
-   
-		
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		PRICE;  # PRICE ASC;
+        
+
 # 상품의 전체 컬럼 검색 (가격이 높은 순서대로 정렬)
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		PRICE DESC;
 
-
-		
 # 상품의 전체 컬럼 검색 (최근에 등록된 상품순서로 정렬)
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		REG_DT DESC;
 
-		
+
+# +@) 최근상품순서 , 가격이 낮은 순서 정렬
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		REG_DT DESC,
+        PRICE ASC;
+
+
 # 2021년도에 등록된 상품의 전체 컬럼 검색 (가격이 높은 순서대로 정렬)
-
-
- 
+SELECT
+		*
+FROM
+		PRODUCT
+WHERE
+		REG_DT BETWEEN '2021-01-01' AND '2021-12-31'
+ORDER BY
+		PRICE DESC;
+	
+    
 /*
  
 	# LIMIT : 특정 개수만큼 레코드 조회하기
@@ -195,16 +332,36 @@ WHERE
 		LIMIT 100,10 : 100번째부터 10row만 조회
         
  */
- 
-		
+ 		
 # 가격이 가장 높은 3개의 상품의 전체 컬럼 조회
-     
-		
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		PRICE DESC
+LIMIT
+		3;
+        
 # 가장 최신에 등록된 3개의 상품의 전체 컬럼 조회
- 
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		REG_DT DESC
+LIMIT
+		3;
  
 # 최신에 등록된 3개의 상품의 전체 컬럼 조회 (2번째 래코드 이후부터 조회)
-		
+SELECT
+		*
+FROM
+		PRODUCT
+ORDER BY
+		REG_DT DESC
+LIMIT
+		2 , 3;		
 		
 		
 		

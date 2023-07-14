@@ -73,9 +73,7 @@ INSERT INTO PRODUCT VALUES ('P10001' , '게이밍마우스패드' , 24850 , '202
 						   ('P10015' , '연장케이블 USB' , 4950 , '2021-12-20');
 						   
 # 전체 컬럼 조회
-
-# SELECT PRODUCT_CD,PRODUCT_NM,PRICE, REG-DT FROM PRODUCT;
-
+# SELECT PRODUCT_CD , PRODUCT_NM , PRICE , REG_DT FROM PRODUCT;
 SELECT * FROM PRODUCT;
 
 SELECT
@@ -83,65 +81,57 @@ SELECT
 FROM
 		PRODUCT;
 
-SELECT 	*
-FROM 	PRODUCT;
-
-
-
+SELECT *
+FROM   PRODUCT;
 
 # PRODUCT_CD 컬럼만 조회
 SELECT 
-		PRODUCT_CD,
+	    PRODUCT_CD
 FROM
 		PRODUCT;
-
 		
-# PRODUCT_CD , PRODUCT_NM 컬럼만 조회
-
+# PRODUCT_CD , PRODUCT_NM 컬럼만 조회	
 SELECT 
-		PRODUCT_CD ,
+	    PRODUCT_CD , 
         PRODUCT_NM
 FROM
-		PRODUCT;	
-
+		PRODUCT;
 		
 # PRODUCT_CD , PRODUCT_NM , PRICE컬럼만 조회	  
-
 SELECT 
-		PRODUCT_CD ,
+	    PRODUCT_CD , 
         PRODUCT_NM ,
         PRICE
 FROM
-		PRODUCT;	
-
+		PRODUCT;
 		
 # PRODUCT_CD , PRODUCT_NM , PRICE , REG_DT 컬럼만 조회	
-
 SELECT 
-		PRODUCT_CD ,
+	    PRODUCT_CD , 
         PRODUCT_NM ,
         PRICE , 
         REG_DT
 FROM
-		PRODUCT;	
-
+		PRODUCT;
 		
+        
 # 컬럼을 적는 순서에 따라 출력되는 순서가 달라진다.
-
 SELECT 
-		PRODUCT_NM ,
-        PRODUCT_CD ,
-        REG_DT , 
-		PRICE
+		REG_DT,
+        PRICE,
+	    PRODUCT_CD, 
+        PRODUCT_NM
 FROM
 		PRODUCT;
-
 		
 # 테이블에 존재하지 않는 연산 데이터를 조회 할 수 있다. AS 키워드로 별칭을 지정할 수 있으며 별칭은 생략할 수 있다.
-
-SELECT 
-		 PRICE,
-         PRICE * 0.1 			AS ADDITONAL_TAX,
-         PRICE + PRICE * 0.1	AS TOTAL_PRICE
+SELECT
+		PRICE,
+        PRICE * 0.1 		AS ADDITIONAL_TAX,
+        PRICE + PRICE * 0.1 AS TOTAL_PRICE
 FROM
 		PRODUCT;
+
+
+
+
